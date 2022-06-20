@@ -9,7 +9,6 @@ public class Candidate {
     private String name;
     private String description;
     private Date created;
-    SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 
     public Candidate() {
     }
