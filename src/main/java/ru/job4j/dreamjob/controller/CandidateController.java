@@ -3,19 +3,19 @@ package ru.job4j.dreamjob.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.job4j.dreamjob.store.PostStore;
+import ru.job4j.dreamjob.store.CandidateStore;
 
 import java.text.SimpleDateFormat;
 
 @Controller
-public class PostController {
+public class CandidateController {
 
-    private final PostStore store = PostStore.instOf();
+    private final CandidateStore store = CandidateStore.instOf();
 
-    @GetMapping("/posts")
+    @GetMapping("/candidates")
     public String posts(Model model) {
-        model.addAttribute("posts", store.findAll());
+        model.addAttribute("candidates", store.findAll());
         model.addAttribute("formatter", new SimpleDateFormat("dd.MM.yyyy HH:mm"));
-        return "posts";
+        return "candidates";
     }
 }
