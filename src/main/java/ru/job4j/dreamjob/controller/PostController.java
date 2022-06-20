@@ -17,7 +17,6 @@ public class PostController {
     @GetMapping("/posts")
     public String posts(Model model) {
         model.addAttribute("posts", store.findAll());
-        model.addAttribute("formatter", new SimpleDateFormat("dd.MM.yyyy HH:mm"));
         return "posts";
     }
 
