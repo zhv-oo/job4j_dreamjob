@@ -23,6 +23,11 @@ public class PostStore {
         return INST;
     }
 
+    public void add(Post post) {
+        post.setCreated(new Date());
+        posts.put(post.getId(), post);
+    }
+
     public Collection<Post> findAll() {
         return posts.values();
     }
