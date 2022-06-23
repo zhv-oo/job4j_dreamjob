@@ -1,6 +1,7 @@
 package ru.job4j.dreamjob.store;
 
 import ru.job4j.dreamjob.model.Candidate;
+import ru.job4j.dreamjob.model.Post;
 
 import java.util.Collection;
 import java.util.Date;
@@ -25,5 +26,14 @@ public class CandidateStore {
 
     public Collection<Candidate> findAll() {
         return posts.values();
+    }
+
+    public Candidate findById(int id) {
+        return posts.get(id);
+    }
+
+    public void update(Candidate candidate) {
+        candidate.setCreated(new Date());
+        posts.replace(candidate.getId(), candidate);
     }
 }
