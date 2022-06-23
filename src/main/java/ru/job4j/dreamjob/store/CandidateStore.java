@@ -7,21 +7,28 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CandidateStore {
-
     private static final CandidateStore INST = new CandidateStore();
-
+    private final AtomicInteger id = new AtomicInteger(0);
     private final Map<Integer, Candidate> posts = new ConcurrentHashMap<>();
 
     private CandidateStore() {
-        posts.put(1, new Candidate(1, "Junior Java Job", "For Junior", new Date()));
-        posts.put(2, new Candidate(2, "Middle Java Job", "For Middle", new Date()));
-        posts.put(3, new Candidate(3, "Senior Java Job", "For Senior", new Date()));
+        posts.put(id.addAndGet(1), new Candidate(id.get(), "Junior Java Job", "For Junior", new Date()));
+        posts.put(id.addAndGet(1), new Candidate(id.get(), "Middle Java Job", "For Middle", new Date()));
+        posts.put(id.addAndGet(1), new Candidate(id.get(), "Senior Java Job", "For Senior", new Date()));
     }
 
     public static CandidateStore instOf() {
         return INST;
+    }
+
+    public void add(Candidate candidate) {
+        int num = id.addAndGet(1);
+        candidate.setId(num);
+        candidate.setCreated(new Date());
+        posts.put(num, candidate);
     }
 
     public Collection<Candidate> findAll() {

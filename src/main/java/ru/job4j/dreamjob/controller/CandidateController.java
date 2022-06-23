@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.dreamjob.model.Candidate;
+import ru.job4j.dreamjob.model.Post;
 import ru.job4j.dreamjob.store.CandidateStore;
 
 import java.util.Date;
@@ -24,8 +25,14 @@ public class CandidateController {
 
     @GetMapping("/formAddCandidate")
     public String addCandidate(Model model) {
-        model.addAttribute("post", new Candidate(0, "Заполните поле", "Заполните описание", new Date()));
+        model.addAttribute("candidate", new Candidate(0, "Заполните поле", "Заполните описание", new Date()));
         return "addCandidate";
+    }
+
+    @PostMapping("/createCandidate")
+    public String createPost(@ModelAttribute Candidate candidate) {
+        store.add(candidate);
+        return "redirect:/candidates";
     }
 
     @PostMapping("/updateCandidate")
