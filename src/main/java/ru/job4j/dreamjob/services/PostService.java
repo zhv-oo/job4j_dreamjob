@@ -28,6 +28,7 @@ public class PostService {
     }
 
     public void update(Post post) {
+
         store.update(post);
     }
 }

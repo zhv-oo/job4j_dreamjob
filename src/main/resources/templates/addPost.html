@@ -58,13 +58,12 @@
                             <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
                         </select>
                     </div>
-
+                    <p>
                     <div class="form-check">
-                        <p>
                         <input type="checkbox" name="visible" class="form-check-input" id="visible">
                         <label class="form-check-label" for="visible">Опубликовать</label>
-                        </p>
                     </div>
+                    </p>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
             </div>

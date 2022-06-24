@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.dreamjob.model.Post;
 import ru.job4j.dreamjob.services.CityService;
 import ru.job4j.dreamjob.services.PostService;
-import java.util.Date;
 
 @ThreadSafe
 @Controller
@@ -32,24 +31,27 @@ public class PostController {
     @GetMapping("/formAddPost")
     public String addPost(Model model) {
         model.addAttribute("cities", cityService.getAllCities());
-        model.addAttribute("post", new Post(0, "Заполните поле", "Заполните описание", new Date()));
         return "addPost";
     }
 
     @PostMapping("/createPost")
     public String createPost(@ModelAttribute Post post) {
+        post.setCity(cityService.findById(post.getCity().getId()));
         postService.add(post);
         return "redirect:/posts";
     }
 
     @PostMapping("/updatePost")
-    public String updatePost(@ModelAttribute Post post) {
+    public String updatePost(@ModelAttribute Post post, Model model) {
+        model.addAttribute("cities", cityService.getAllCities());
+        post.setCity(cityService.findById(post.getCity().getId()));
         postService.update(post);
         return "redirect:/posts";
     }
 
     @GetMapping("/formUpdatePost/{postId}")
     public String formUpdatePost(Model model, @PathVariable("postId") int id) {
+        model.addAttribute("cities", cityService.getAllCities());
         model.addAttribute("post", postService.findById(id));
         return "updatePost";
     }

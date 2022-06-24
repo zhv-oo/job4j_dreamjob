@@ -2,6 +2,7 @@ package ru.job4j.dreamjob.store;
 
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Repository;
+import ru.job4j.dreamjob.model.City;
 import ru.job4j.dreamjob.model.Post;
 import java.util.Collection;
 import java.util.Date;
@@ -17,9 +18,9 @@ public class PostStore {
     private final Map<Integer, Post> posts = new ConcurrentHashMap<>();
 
     private PostStore() {
-        posts.put(id.incrementAndGet(), new Post(id.get(), "Junior Java Job", "For Junior", new Date()));
-        posts.put(id.incrementAndGet(), new Post(id.get(), "Middle Java Job", "For Middle", new Date()));
-        posts.put(id.incrementAndGet(), new Post(id.get(), "Senior Java Job", "For Senior", new Date()));
+        posts.put(id.incrementAndGet(), new Post(id.get(), "Junior Java Job", "For Junior", new Date(), new City(1, "Москва")));
+        posts.put(id.incrementAndGet(), new Post(id.get(), "Middle Java Job", "For Middle", new Date(), new City(2, "СПб")));
+        posts.put(id.incrementAndGet(), new Post(id.get(), "Senior Java Job", "For Senior", new Date(), new City(3, "Екб")));
     }
 
     public void add(Post post) {
