@@ -42,7 +42,7 @@
                 Новый кандидат.
             </div>
             <div class="card-body">
-                <form th:action="@{/createCandidate}" method="POST">
+                <form th:action="@{/createCandidate}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Имя
                             <input name="name" type="text" class="form-control">
@@ -50,6 +50,12 @@
                         <label>Описание
                             <input name="description" type="text" class="form-control">
                         </label>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                        <label form="name">Фотография</label>
+                        <input type="file" class="form-control" name="file" id="file" style="max-width:25%">
+                        </p>
                     </div>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>

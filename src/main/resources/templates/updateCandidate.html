@@ -39,7 +39,7 @@
                 Редатирование вакансии вакансия.
             </div>
             <div class="card-body">
-                <form th:action="@{/updateCandidate}" method="POST" th:object="${candidate}">
+                <form th:action="@{/updateCandidate}" method="POST" th:object="${candidate}" enctype="multipart/form-data">
                     <input type="hidden" name="id" th:field="*{id}"/>
                     <div class="form-group">
                         <label for="name">Имя
@@ -48,6 +48,14 @@
                         <label for="name">Описание
                             <input type="text" class="form-control" name="description" id="description" th:field="*{description}">
                         </label>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <label form="name">Фотография</label>
+                            <img th:width="150" th:high="150" th:src="@{|/photoCandidate/${candidate.id}|}">
+                            <label form="name">Заменить?</label>
+                            <input type="file" class="form-control" name="file" id="file" style="max-width:25%">
+                        </p>
                     </div>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>

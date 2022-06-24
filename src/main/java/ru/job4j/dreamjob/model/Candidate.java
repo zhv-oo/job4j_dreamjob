@@ -7,6 +7,7 @@ public class Candidate {
     private int id;
     private String name;
     private String description;
+    private byte[] photo;
     private Date created;
 
     public Candidate() {
@@ -50,6 +51,15 @@ public class Candidate {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 
     @Override
