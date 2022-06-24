@@ -8,9 +8,10 @@ public class Post {
     private String name;
     private String description;
     private boolean visible;
+    private City city;
     private Date created;
 
-    public Post() {
+    private Post() {
     }
 
     public Post(int id, String name) {
