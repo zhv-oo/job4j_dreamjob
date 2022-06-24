@@ -7,6 +7,7 @@ public class Post {
     private int id;
     private String name;
     private String description;
+    private boolean visible;
     private Date created;
 
     public Post() {
@@ -54,6 +55,14 @@ public class Post {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     @Override
