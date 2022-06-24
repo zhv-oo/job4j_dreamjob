@@ -48,7 +48,20 @@
                         <label for="name">Описание
                         <input type="text" class="form-control" name="description" id="description" th:field="*{description}">
                         </label>
+                        <div class="form-check">
+                            <p>
+                                <span th:if="*{visible}">
+                                        <input type="checkbox" name="visible" class="fa fa-check-square-o" checked>
+                                </span>
+                                <span th:if="*{!visible}">
+                                        <input type="checkbox" name="visible" class="fa fa-square-o">
+                                </span>
+                                <label class="form-check-label">Опубликовать</label>
+                            </p>
+
+                        </div>
                     </div>
+
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
             </div>
