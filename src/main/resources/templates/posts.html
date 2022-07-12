@@ -65,7 +65,7 @@
                     <span th:text="${post.description}"></span>
                 </td>
                 <td>
-                    <span th:text="${post.city.getName()}"></span>
+                    <span th:text="${post.getCity()}"></span>
                 </td>
                 <td>
                     <span th:text="${#dates.format(post.created, 'dd.MM.yyyy HH:mm')}"></span>
