@@ -21,6 +21,14 @@ public class Candidate {
         this.created = created;
     }
 
+    public Candidate(int id, String name, String description, byte[] photo, Date created) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.photo = photo;
+        this.created = created;
+    }
+
     public int getId() {
         return id;
     }
