@@ -35,6 +35,6 @@ public class PostService {
                         cityService.findById(post.getCity().getId())
                 )
         );
-        return store.findAll();
+        return posts;
     }
 }
