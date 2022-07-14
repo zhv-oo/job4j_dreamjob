@@ -1,0 +1,4 @@
+2022-07-14 20:30:02,072  INFO ru.job4j.dreamjob.store.PostDBStore:findAll:37 - org.postgresql.util.PSQLException: Колонки nam не найдено в этом ResultSet’’е.
+2022-07-14 20:30:03,756  INFO ru.job4j.dreamjob.store.CandidateDbStore:findAll:36 - org.postgresql.util.PSQLException: Колонки ame не найдено в этом ResultSet’’е.
+2022-07-14 20:31:26,048  INFO ru.job4j.dreamjob.store.PostDBStore:findAll:37 - org.postgresql.util.PSQLException: Колонки nam не найдено в этом ResultSet’’е.
+2022-07-14 20:31:27,738  INFO ru.job4j.dreamjob.store.CandidateDbStore:findAll:36 - org.postgresql.util.PSQLException: Колонки ame не найдено в этом ResultSet’’е.

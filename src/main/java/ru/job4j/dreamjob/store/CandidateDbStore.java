@@ -2,6 +2,7 @@ package ru.job4j.dreamjob.store;
 
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Candidate;
 
@@ -14,6 +15,7 @@ import java.util.*;
 @Repository
 public class CandidateDbStore {
     private final BasicDataSource pool;
+    static Logger logger = Logger.getLogger(CandidateDbStore.class);
 
     public CandidateDbStore(BasicDataSource pool) {
         this.pool = pool;
@@ -31,7 +33,7 @@ public class CandidateDbStore {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info(e);
         }
         return candidates;
     }
@@ -53,7 +55,7 @@ public class CandidateDbStore {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info(e);
         }
         return candidate;
     }
@@ -70,7 +72,7 @@ public class CandidateDbStore {
             ps.setInt(4, candidate.getId());
             ps.execute();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info(e);
         }
     }
 
@@ -86,7 +88,7 @@ public class CandidateDbStore {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info(e);
         }
         return null;
     }
