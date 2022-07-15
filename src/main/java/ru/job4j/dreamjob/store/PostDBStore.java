@@ -34,7 +34,7 @@ public class PostDBStore {
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return posts;
     }
@@ -57,7 +57,7 @@ public class PostDBStore {
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return post;
     }
@@ -75,7 +75,7 @@ public class PostDBStore {
             ps.setInt(5, post.getId());
             ps.execute();
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -92,7 +92,7 @@ public class PostDBStore {
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return null;
     }

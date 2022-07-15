@@ -15,7 +15,7 @@ import java.util.*;
 @Repository
 public class CandidateDbStore {
     private final BasicDataSource pool;
-    static Logger logger = Logger.getLogger(CandidateDbStore.class);
+    private static Logger logger = Logger.getLogger(CandidateDbStore.class);
 
     public CandidateDbStore(BasicDataSource pool) {
         this.pool = pool;
@@ -28,12 +28,12 @@ public class CandidateDbStore {
         ) {
             try (ResultSet it = ps.executeQuery()) {
                 while (it.next()) {
-                    candidates.add(new Candidate(it.getInt("id"), it.getString("name"), it.getString("description"),
+                    candidates.add(new Candidate(it.getInt("id"), it.getString("ame"), it.getString("description"),
                             it.getBytes("photo"), it.getTimestamp("created")));
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return candidates;
     }
@@ -55,7 +55,7 @@ public class CandidateDbStore {
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return candidate;
     }
@@ -72,7 +72,7 @@ public class CandidateDbStore {
             ps.setInt(4, candidate.getId());
             ps.execute();
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -88,7 +88,7 @@ public class CandidateDbStore {
                 }
             }
         } catch (Exception e) {
-            logger.info(e);
+            logger.error(e.getMessage(), e);
         }
         return null;
     }
