@@ -28,7 +28,7 @@ public class CandidateDbStore {
         ) {
             try (ResultSet it = ps.executeQuery()) {
                 while (it.next()) {
-                    candidates.add(new Candidate(it.getInt("id"), it.getString("ame"), it.getString("description"),
+                    candidates.add(new Candidate(it.getInt("id"), it.getString("name"), it.getString("description"),
                             it.getBytes("photo"), it.getTimestamp("created")));
                 }
             }
