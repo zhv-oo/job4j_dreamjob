@@ -1,0 +1,36 @@
+2022-08-03 21:16:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+SELECT * FROM post [42102-200]
+2022-08-03 21:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+SELECT * FROM post [42102-200]
+2022-08-03 21:16:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:16:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+SELECT * FROM post WHERE id = ? [42102-200]
+2022-08-03 21:17:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+INSERT INTO post(name, description, visible, created, city_id) VALUES (?, ?, ?, ?, ?) [42102-200]
+2022-08-03 21:17:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" not found; SQL statement:
+SELECT * FROM post WHERE id = ? [42102-200]
+2022-08-03 21:18:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42102-200]
