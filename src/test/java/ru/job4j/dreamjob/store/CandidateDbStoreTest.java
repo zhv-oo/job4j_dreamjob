@@ -8,11 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-
 class CandidateDbStoreTest {
-    private final CandidateDbStore store = new CandidateDbStore(new Main().loadPool());
     @Test
     public void whenAddOneCandidate() {
+        CandidateDbStore store = new CandidateDbStore(new Main().loadPool());
         Candidate candidate = new Candidate(0, "Иванов", "Junior", new Date());
         store.add(candidate);
         Candidate canInDb = store.findById(candidate.getId());
@@ -20,6 +19,7 @@ class CandidateDbStoreTest {
     }
     @Test
     public void whenAddTwoCandidate() {
+        CandidateDbStore store = new CandidateDbStore(new Main().loadPool());
         Candidate candidate = new Candidate(0, "Иванов", "Junior", new Date());
         Candidate candidateTwo = new Candidate(1, "Петров", "NewBe", new Date());
         store.add(candidate);
@@ -29,6 +29,7 @@ class CandidateDbStoreTest {
     }
     @Test
     public void whenFindAllCandidates() {
+        CandidateDbStore store = new CandidateDbStore(new Main().loadPool());
         Candidate candidate = new Candidate(0, "Иванов", "Junior", new Date());
         Candidate candidateTwo = new Candidate(1, "Петров", "NewBe", new Date());
         int size = store.findAll().size();
@@ -39,6 +40,7 @@ class CandidateDbStoreTest {
     }
     @Test
     public void whenAUpdateCandidate() {
+        CandidateDbStore store = new CandidateDbStore(new Main().loadPool());
         Candidate candidate = new Candidate(0, "Иванов", "Junior", new Date());
         store.add(candidate);
         Candidate candidateTwo = new Candidate(candidate.getId(), "Петров", "NewBe", new Date());
