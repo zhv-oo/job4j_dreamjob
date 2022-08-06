@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS candidate (
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    email TEXT,
-    password TEXT
+    email varchar,
+    password text
 );
 
 ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);

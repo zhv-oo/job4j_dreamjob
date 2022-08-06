@@ -9,6 +9,7 @@ import ru.job4j.dreamjob.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Optional;
 
 @ThreadSafe
 @Repository
@@ -20,7 +21,7 @@ public class UserDBStore {
         this.pool = pool;
     }
 
-    public User add(User user) {
+    public Optional<User> add(User user) {
         try (Connection cn = pool.getConnection();
              PreparedStatement ps =  cn.prepareStatement("INSERT INTO users(email, password) VALUES (?, ?)",
                      PreparedStatement.RETURN_GENERATED_KEYS)
@@ -37,6 +38,6 @@ public class UserDBStore {
             logger.error(e.getMessage(), e);
             user = null;
         }
-        return user;
+        return Optional.ofNullable(user);
     }
 }
