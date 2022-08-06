@@ -22,6 +22,7 @@ public class UserDBStore {
     }
 
     public Optional<User> add(User user) {
+        Optional<User> rsl = Optional.empty();
         try (Connection cn = pool.getConnection();
              PreparedStatement ps =  cn.prepareStatement("INSERT INTO users(email, password) VALUES (?, ?)",
                      PreparedStatement.RETURN_GENERATED_KEYS)
@@ -34,10 +35,10 @@ public class UserDBStore {
                     user.setId(id.getInt(1));
                 }
             }
+            rsl = Optional.of(user);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            user = null;
         }
-        return Optional.ofNullable(user);
+        return rsl;
     }
 }
