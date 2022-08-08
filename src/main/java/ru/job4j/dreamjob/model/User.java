@@ -3,6 +3,9 @@ package ru.job4j.dreamjob.model;
 import java.util.Objects;
 
 public class User {
+    public User() {
+    }
+
     public User(int id, String email, String password) {
         this.id = id;
         this.email = email;
@@ -10,6 +13,7 @@ public class User {
     }
 
     private int id;
+    private String name;
     private String email;
     private String password;
 
@@ -35,6 +39,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return this.email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
