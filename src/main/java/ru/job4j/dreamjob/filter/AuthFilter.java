@@ -17,6 +17,10 @@ public class AuthFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         String uri = req.getRequestURI();
+        if (uri.endsWith("RegistrationUser") || uri.endsWith("registration") || uri.endsWith("fail")) {
+            chain.doFilter(req, res);
+            return;
+        }
         if (uri.endsWith("loginPage") || uri.endsWith("login")) {
             chain.doFilter(req, res);
             return;
