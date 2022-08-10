@@ -24,14 +24,4 @@ public class UserService {
     public Optional<User> findUserByEmailAndPwd(String email, String password) {
         return store.findUserByEmailAndPwd(email, password);
     }
-
-    public static User getUserName(HttpSession session) {
-        User user = (User) session.getAttribute("user");
-        if (user == null) {
-            user = new User();
-            user.setEmail("Гость");
-            user.setName("Гость");
-        }
-        return user;
-    }
 }
