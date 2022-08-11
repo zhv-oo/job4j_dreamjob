@@ -1,12 +1,12 @@
-package ru.job4j.dreamjob.services;
+package ru.job4j.dreamjob.util;
 
 import ru.job4j.dreamjob.model.User;
 
 import javax.servlet.http.HttpSession;
 
-public final class UserNameService {
+public final class UserFromHttpSession {
 
-    private UserNameService() {
+    private UserFromHttpSession() {
     }
 
     public static User getUserName(HttpSession session) {
