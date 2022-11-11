@@ -20,6 +20,11 @@ public class PostService {
         store.add(post);
     }
 
+    public Post addAndReturn(Post post) {
+        store.add(post);
+        return post;
+    }
+
     public Post findById(int id) {
         return store.findById(id);
     }

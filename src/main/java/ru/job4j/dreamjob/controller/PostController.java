@@ -47,7 +47,7 @@ public class PostController {
     }
 
     @PostMapping("/updatePost")
-    public String updatePost(@ModelAttribute Post post, Model model) {
+        public String updatePost(@ModelAttribute Post post, Model model) {
         model.addAttribute("cities", cityService.getAllCities());
         post.setCity(cityService.findById(post.getCity().getId()));
         postService.update(post);
