@@ -15,8 +15,9 @@ public class CandidateService {
         this.store = store;
     }
 
-    public void add(Candidate candidate) {
+    public Candidate add(Candidate candidate) {
         store.add(candidate);
+        return candidate;
     }
 
     public Collection<Candidate> findAll() {

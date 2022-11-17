@@ -16,11 +16,7 @@ public class PostService {
         this.store = store;
     }
 
-    public void add(Post post) {
-        store.add(post);
-    }
-
-    public Post addAndReturn(Post post) {
+    public Post add(Post post) {
         store.add(post);
         return post;
     }

@@ -70,7 +70,7 @@ class PostControllerTest {
         Post input = new Post(1, "New post", new City(2, "СПб"));
         Model model = mock(Model.class);
         PostService postService = mock(PostService.class);
-        when(postService.addAndReturn(input)).thenReturn(input);
+        when(postService.add(input)).thenReturn(input);
         CityService cityService = mock(CityService.class);
         PostController postController = new PostController(
                 postService,

@@ -58,12 +58,13 @@ public class CandidateController {
     }
 
     @GetMapping("/formUpdateCandidate/{candidateId}")
-    public String formUpdatePost(Model model, @PathVariable("candidateId") int id,
+    public String formUpdateCandidate(Model model, @PathVariable("candidateId") int id,
                                  HttpSession session) {
         model.addAttribute("user", UserFromHttpSession.getUserName(session));
         model.addAttribute("candidate", candidateService.findById(id));
         return "updateCandidate";
     }
+
 
     @GetMapping("/photoCandidate/{candidateId}")
     public ResponseEntity<Resource> download(@PathVariable("candidateId") Integer candidateId) {
